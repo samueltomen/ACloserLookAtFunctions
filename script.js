@@ -168,7 +168,7 @@ transformer('JavaScript is the best!', oneWord);
 
 // Déclare une fonction high5 qui affiche un emoji "rock on" dans la console
 const high5 = function () {
-  console.log('🤟');
+  //console.log('🤟');
 };
 
 // Attache la fonction high5 à l'événement click du corps du document, de sorte que chaque clic sur le corps du document affiche l'emoji "rock on" dans la console
@@ -176,3 +176,31 @@ document.body.addEventListener('click', high5);
 
 // Applique la fonction high5 à chaque élément du tableau ['Jonas', 'Martha', 'Adam'], de sorte que chaque élément affiche l'emoji "rock on" dans la console
 ['Jonas', 'Martha', 'Adam'].forEach(high5);
+
+//------------------------------------------------------------------//
+
+//FUNCTION RETURNING FUNCTIONS
+
+// Créer une fonction qui prend un paramètre greeting et
+// Retourne une fonction qui prendra un paramètre name
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+// Utiliser la fonction greeter avec le paramètre 'Hey'
+const greeterHey = greet('Hey');
+
+// Appeler greeterHey avec les noms suivants en tant que paramètres
+greeterHey('Jonas');
+greeterHey('Steven');
+
+// Appeler directement greet avec le paramètre 'Hello' et le nom Jonas
+greet('Hello')('Jonas');
+
+// La même chose en utilisant des fonctions fléchées
+const greet2 = greeting => name => console.log(`${greeting} ${name}`);
+
+// Appeler greet2  avec le paramètre 'Hello' et le nom Eddy
+greet2('Hello')('Eddy');
