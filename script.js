@@ -15,22 +15,22 @@ const bookings = [];
 
 // Create a function called createBooking that accepts three parameters, with the last two having default values.
 const createBooking = function (flightNum, numPassengers = 1, price = 199) {
-  // ES5 Syntax (used before ES6):
-  // numPassengers = numPassengers || 1;
-  // price = price || 199;
+    // ES5 Syntax (used before ES6):
+    // numPassengers = numPassengers || 1;
+    // price = price || 199;
 
-  // Create a booking object with the provided or default parameters
-  const booking = {
-    flightNum,
-    numPassengers,
-    price,
-  };
+    // Create a booking object with the provided or default parameters
+    const booking = {
+        flightNum,
+        numPassengers,
+        price,
+    };
 
-  // Print the booking object to the console
-  console.log(booking);
+    // Print the booking object to the console
+    console.log(booking);
 
-  // Add the booking object to the bookings array
-  bookings.push(booking);
+    // Add the booking object to the bookings array
+    bookings.push(booking);
 };
 
 // Call the createBooking function with different sets of arguments to test its behavior
@@ -74,23 +74,23 @@ const flight = 'LH234';
 
 // Déclaration d'un objet jonas avec deux propriétés : name et passport
 const jonas = {
-  name: 'Jonas Schmedtmann',
-  passport: 24739479284,
+    name: 'Jonas Schmedtmann',
+    passport: 24739479284,
 };
 
 // Déclaration d'une fonction checkIn avec deux paramètres : flightNum et passenger
 const checkIn = function (flightNum, passenger) {
-  // La valeur de flightNum est changée à 'LH999'
-  flightNum = 'LH999';
-  // La propriété name de l'objet passenger est modifiée en ajoutant 'Mr. ' au début
-  passenger.name = 'Mr. ' + passenger.name;
+    // La valeur de flightNum est changée à 'LH999'
+    flightNum = 'LH999';
+    // La propriété name de l'objet passenger est modifiée en ajoutant 'Mr. ' au début
+    passenger.name = 'Mr. ' + passenger.name;
 
-  // Vérification que le numéro de passeport du passager correspond à la valeur attendue
-  if (passenger.passport === 24739479284) {
-    console.log('Checked in');
-  } else {
-    console.log('Wrong passport!');
-  }
+    // Vérification que le numéro de passeport du passager correspond à la valeur attendue
+    if (passenger.passport === 24739479284) {
+        console.log('Checked in');
+    } else {
+        console.log('Wrong passport!');
+    }
 };
 
 // Appel de la fonction checkIn avec les arguments flight et jonas
@@ -109,8 +109,8 @@ const checkIn = function (flightNum, passenger) {
 
 // Déclaration d'une fonction newPassport avec un paramètre person
 const newPassport = function (person) {
-  // La propriété passport de l'objet person est modifiée avec une valeur aléatoire entre 0 et 100000 (arrondie à l'entier inférieur)
-  person.passport = Math.trunc(Math.random() * 100000);
+    // La propriété passport de l'objet person est modifiée avec une valeur aléatoire entre 0 et 100000 (arrondie à l'entier inférieur)
+    person.passport = Math.trunc(Math.random() * 100000);
 };
 
 // Appel de la fonction newPassport avec l'objet jonas comme argument
@@ -144,20 +144,20 @@ cliqué ou lorsqu’un tableau de noms est itéré dans une boucle, la fonction 
 
 // Cette fonction prend une chaîne de caractères et renvoie une version en minuscules sans espaces
 const oneWord = function (str) {
-  return str.replaceAll(' ', ' ').toLowerCase();
+    return str.replaceAll(' ', ' ').toLowerCase();
 };
 
 // Cette fonction prend une chaîne de caractères et renvoie une version avec le premier mot en majuscule et le reste en minuscule
 const upperFirstWord = function (str) {
-  const [first, ...others] = str.split(' ');
-  return [first.toUpperCase(), ...others].join(' ');
+    const [first, ...others] = str.split(' ');
+    return [first.toUpperCase(), ...others].join(' ');
 };
 
 // Cette fonction prend une chaîne de caractères et une fonction de transformation, applique la fonction de transformation à la chaîne de caractères, puis affiche la chaîne de caractères d'origine, la chaîne transformée et le nom de la fonction de transformation utilisée
 const transformer = function (str, fn) {
-  console.log(`Original string: ${str}`);
-  console.log(`Transform string ${fn(str)}`);
-  console.log(`Transformed by: ${fn.name}`);
+    console.log(`Original string: ${str}`);
+    console.log(`Transform string ${fn(str)}`);
+    console.log(`Transformed by: ${fn.name}`);
 };
 
 // Applique la fonction upperFirstWord à la chaîne de caractères 'JavaScript is the best!' et affiche le résultat
@@ -168,7 +168,7 @@ transformer('JavaScript is the best!', oneWord);
 
 // Déclare une fonction high5 qui affiche un emoji "rock on" dans la console
 const high5 = function () {
-  //console.log('🤟');
+    //console.log('🤟');
 };
 
 // Attache la fonction high5 à l'événement click du corps du document, de sorte que chaque clic sur le corps du document affiche l'emoji "rock on" dans la console
@@ -184,9 +184,9 @@ document.body.addEventListener('click', high5);
 // Créer une fonction qui prend un paramètre greeting et
 // Retourne une fonction qui prendra un paramètre name
 const greet = function (greeting) {
-  return function (name) {
-    console.log(`${greeting} ${name}`);
-  };
+    return function (name) {
+        console.log(`${greeting} ${name}`);
+    };
 };
 
 // Utiliser la fonction greeter avec le paramètre 'Hey'
@@ -200,7 +200,7 @@ greeterHey('Steven');
 greet('Hello')('Jonas');
 
 // La même chose en utilisant des fonctions fléchées
-const greet2 = greeting => name => console.log(`${greeting} ${name}`);
+const greet2 = (greeting) => (name) => console.log(`${greeting} ${name}`);
 
 // Appeler greet2  avec le paramètre 'Hello' et le nom Eddy
 greet2('Hello')('Eddy');
@@ -228,29 +228,29 @@ contenant le numéro de vol et le nom de la réservation. Il est ensuite appelé
 en utilisant l'opérateur spread (...) qui est essentiellement raccourci pour la méthode apply(). */
 
 const lufthansa = {
-  // object literal containing airline name, IATA code and an array of bookings
-  airline: 'Lufthansa',
-  iataCode: 'LH',
-  bookings: [],
+    // object literal containing airline name, IATA code and an array of bookings
+    airline: 'Lufthansa',
+    iataCode: 'LH',
+    bookings: [],
 
-  // function to book a seat on a flight
-  book(flightNum, name) {
-    console.log(`
+    // function to book a seat on a flight
+    book(flightNum, name) {
+        console.log(`
   ${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}
   `);
-    // add new booking information to the bookings array
-    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
-  },
+        // add new booking information to the bookings array
+        this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+    },
 };
 // example of using the book funtion
 lufthansa.book(239, 'Jonas Schmedtmann');
 lufthansa.book(635, 'John Smith');
 
 const eurowings = {
-  // create new airline with its properties
-  airline: 'Eurowings',
-  iataCode: 'EW',
-  bookings: [],
+    // create new airline with its properties
+    airline: 'Eurowings',
+    iataCode: 'EW',
+    bookings: [],
 };
 
 // assign the book method from the lufthansa object to a new variable
@@ -266,10 +266,10 @@ book.call(lufthansa, 239, 'Mary Cooper');
 console.log(lufthansa);
 
 const swiss = {
-  // create new airline with its properties
-  airline: 'Swiss Air Lines',
-  iataCode: 'LX',
-  bookings: [],
+    // create new airline with its properties
+    airline: 'Swiss Air Lines',
+    iataCode: 'LX',
+    bookings: [],
 };
 
 // call the book function using swiss as the context, meaning that it will update the swiss bookings array
@@ -323,17 +323,17 @@ lufthansa.planes = 300;
 // Define the buyPlane function which increases the number
 // of planes by one and logs it to the console
 lufthansa.buyPlane = function () {
-  console.log(this);
+    console.log(this);
 
-  this.planes++;
-  console.log(this.planes);
+    this.planes++;
+    console.log(this.planes);
 };
 
 // Add event listener to the HTML element with the 'buy' class
 // so each time it's clicked, the buyPlane function is invoked
 document
-  .querySelector('.buy')
-  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+    .querySelector('.buy')
+    .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
 
 /* Partial Application
 Partial application est une technique utilisée pour créer une nouvelle fonction en fournissant d'avance certains des arguments à une fonction donnée. Cela peut être fait via la méthode bind(), où le premier argument passé à bind() devient le premier argument de la nouvelle fonction.
@@ -356,12 +356,54 @@ console.log(addVAT(23));
 //The returned inner function utilizes the rate from the scope and
 //calculates and returns value + value * rate
 const addTaxRate = function (rate) {
-  return function (value) {
-    return value + value * rate;
-  };
+    return function (value) {
+        return value + value * rate;
+    };
 };
 
 //Create addVAT2 by applying the addTaxRate function and passing 0.23 as the rate
 const addVAT2 = addTaxRate(0.23);
 console.log(addVAT2(100));
 console.log(addVAT2(23));
+
+//------------------------------------------------------------------//
+
+// CODING CHALLENGE #1
+
+const poll = {
+    question: 'What is your favourite programming language?',
+    options: ['0: JavaScript', '1: Python', '2: Rust', '3:C++'],
+    // This generates [0, 0, 0, 0]. More in the next section!
+    answers: new Array(4).fill(0),
+    registerNewAnswer() {
+        const answerUser = Number(
+            prompt(
+                `${this.question}\n${this.options.join(
+                    '\n'
+                )}\n(Write option number)`
+            )
+        );
+        //Register answer
+        typeof answerUser === 'number' &&
+            answerUser < this.answers.length &&
+            this.answers[answerUser]++;
+        console.log('Hey');
+    },
+};
+
+document
+    .querySelector('.poll')
+    .addEventListener('click', poll.registerNewAnswer.bind(poll));
+
+poll.displayResult = function (type) {
+    if (typeof type === 'array') {
+        console.log(...type);
+    } else {
+        console.log(`Poll result are ${type}`);
+    }
+};
+
+poll.displayResult(poll.registerNewAnswer());
+
+// poll.registerNewAnswer();
+
